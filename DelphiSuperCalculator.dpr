@@ -3,12 +3,13 @@ program DelphiSuperCalculator;
 uses
   System.StartUpCopy,
   FMX.Forms,
-  uFormCalculator in 'uFormCalculator.pas' {Form1};
+  uFormCalculator in 'uFormCalculator.pas' {FormCalc},
+  uCalculator in 'uCalculator.pas';
 
 {$R *.res}
 
 begin
   Application.Initialize;
-  Application.CreateForm(TForm1, Form1);
+  Application.CreateForm(TFormCalc, FormCalc);
   Application.Run;
 end.
