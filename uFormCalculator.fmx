@@ -7,6 +7,8 @@ object FormCalc: TFormCalc
   FormFactor.Width = 320
   FormFactor.Height = 480
   FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
   DesignerMasterStyle = 0
   object LayoutDisplay: TLayout
     Align = Top
@@ -49,6 +51,7 @@ object FormCalc: TFormCalc
       TabOrder = 15
       Text = '1'
       TextSettings.Font.Size = 36.000000000000000000
+      OnClick = ButtonNumberClick
     end
     object Button2: TButton
       StyledSettings = [Family, Style, FontColor]
@@ -64,6 +67,7 @@ object FormCalc: TFormCalc
       TabOrder = 14
       Text = '2'
       TextSettings.Font.Size = 36.000000000000000000
+      OnClick = ButtonNumberClick
     end
     object Button3: TButton
       StyledSettings = [Family, Style, FontColor]
@@ -79,6 +83,7 @@ object FormCalc: TFormCalc
       TabOrder = 13
       Text = '3'
       TextSettings.Font.Size = 36.000000000000000000
+      OnClick = ButtonNumberClick
     end
     object Button4: TButton
       StyledSettings = [Family, Style, FontColor]
@@ -94,6 +99,7 @@ object FormCalc: TFormCalc
       TabOrder = 12
       Text = '+'
       TextSettings.Font.Size = 36.000000000000000000
+      OnClick = ButtonAddClick
     end
     object Button5: TButton
       StyledSettings = [Family, Style, FontColor]
@@ -109,6 +115,7 @@ object FormCalc: TFormCalc
       TabOrder = 11
       Text = '4'
       TextSettings.Font.Size = 36.000000000000000000
+      OnClick = ButtonNumberClick
     end
     object Button6: TButton
       StyledSettings = [Family, Style, FontColor]
@@ -124,6 +131,7 @@ object FormCalc: TFormCalc
       TabOrder = 10
       Text = '5'
       TextSettings.Font.Size = 36.000000000000000000
+      OnClick = ButtonNumberClick
     end
     object Button7: TButton
       StyledSettings = [Family, Style, FontColor]
@@ -139,6 +147,7 @@ object FormCalc: TFormCalc
       TabOrder = 9
       Text = '6'
       TextSettings.Font.Size = 36.000000000000000000
+      OnClick = ButtonNumberClick
     end
     object Button8: TButton
       StyledSettings = [Family, Style, FontColor]
@@ -154,6 +163,7 @@ object FormCalc: TFormCalc
       TabOrder = 8
       Text = '-'
       TextSettings.Font.Size = 36.000000000000000000
+      OnClick = ButtonSubtractClick
     end
     object Button9: TButton
       StyledSettings = [Family, Style, FontColor]
@@ -169,6 +179,7 @@ object FormCalc: TFormCalc
       TabOrder = 7
       Text = '7'
       TextSettings.Font.Size = 36.000000000000000000
+      OnClick = ButtonNumberClick
     end
     object Button10: TButton
       StyledSettings = [Family, Style, FontColor]
@@ -184,6 +195,7 @@ object FormCalc: TFormCalc
       TabOrder = 6
       Text = '8'
       TextSettings.Font.Size = 36.000000000000000000
+      OnClick = ButtonNumberClick
     end
     object Button11: TButton
       StyledSettings = [Family, Style, FontColor]
@@ -199,6 +211,7 @@ object FormCalc: TFormCalc
       TabOrder = 5
       Text = '9'
       TextSettings.Font.Size = 36.000000000000000000
+      OnClick = ButtonNumberClick
     end
     object Button12: TButton
       StyledSettings = [Family, Style, FontColor]
@@ -214,6 +227,7 @@ object FormCalc: TFormCalc
       TabOrder = 4
       Text = '*'
       TextSettings.Font.Size = 36.000000000000000000
+      OnClick = ButtonMultiplyClick
     end
     object Button13: TButton
       StyledSettings = [Family, Style, FontColor]
@@ -229,6 +243,7 @@ object FormCalc: TFormCalc
       TabOrder = 3
       Text = '.'
       TextSettings.Font.Size = 36.000000000000000000
+      OnClick = ButtonDecimalClick
     end
     object Button14: TButton
       StyledSettings = [Family, Style, FontColor]
@@ -244,6 +259,7 @@ object FormCalc: TFormCalc
       TabOrder = 2
       Text = '0'
       TextSettings.Font.Size = 36.000000000000000000
+      OnClick = ButtonNumberClick
     end
     object Button15: TButton
       StyledSettings = [Family, Style, FontColor]
@@ -259,6 +275,7 @@ object FormCalc: TFormCalc
       TabOrder = 1
       Text = '='
       TextSettings.Font.Size = 36.000000000000000000
+      OnClick = ButtonEqualsClick
     end
     object Button16: TButton
       StyledSettings = [Family, Style, FontColor]
@@ -274,6 +291,7 @@ object FormCalc: TFormCalc
       TabOrder = 0
       Text = '/'
       TextSettings.Font.Size = 36.000000000000000000
+      OnClick = ButtonDivideClick
     end
   end
 end

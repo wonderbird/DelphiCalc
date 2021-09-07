@@ -2,6 +2,8 @@ unit uCalculator;
 
 interface
 
+uses System.SysUtils;
+
 type
 
   TOperatorEnum = (opNull, opAdd, opSubtract, opMultiply, opDivide);
@@ -35,6 +37,7 @@ type
 implementation
 
   {TCalcStatus}
+
   constructor TCalcStatus.Create;
   begin
   end;
@@ -51,7 +54,22 @@ implementation
   end;
 
   procedure TCalcStatus.CalcTotal;
+  var
+    NewValue: Double;
   begin
+    NewValue := StrToFloat(FInputValue);
+    case FOperation of
+      opNull: FCurrentTotal := NewValue;
+      opAdd: FCurrentTotal := TCalculator.Add(FCurrentTotal, NewValue);
+      opSubtract: FCurrentTotal := TCalculator.Subtract(FCurrentTotal, NewValue);
+      opMultiply: FCurrentTotal := TCalculator.Multiply(FCurrentTotal, NewValue);
+      opDivide: FCurrentTotal := TCalculator.Divide(FCurrentTotal, NewValue);
+    end;
+
+    // reset status
+    FOperation := opNull;
+    FDisplayTotal := True;
+    FInputValue := '';
   end;
 
   procedure TCalcStatus.NewOperation(Oper: TOperatorEnum);
@@ -62,7 +80,10 @@ implementation
 
   function TCalcStatus.DisplayValue: string;
   begin
-    Result := '';
+    if FDisplayTotal then
+      Result := FloatToStr(FCurrentTotal)
+    else
+      Result := FInputValue;
   end;
 
   {TCalculator}
